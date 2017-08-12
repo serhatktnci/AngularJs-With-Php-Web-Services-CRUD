@@ -1,0 +1,43 @@
+<h3 class="page-title">
+    Content
+</h3>
+<div class="page-bar">
+
+</div>
+<div class="row">
+    <div class="col-md-7">
+        <div class="portlet box red" ng-init="getContent('')">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs"></i>Content
+                </div>
+          
+            </div>
+            <div class="portlet-body">
+                <div ng-show="content.length == 0" class="note note-warning note-bordered">
+                    <h3>Content Not Found.</h3>
+                </div>
+                <div class="table-scrollable" ng-show="content.length > 0">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Content</th>                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="val in content">
+                                <td>{{val.title}}</td>
+                                <td title="{{val.content}}">{{val.content | limitTo: 20}}<span ng-if="val.content.length > 20">...</span></td>
+                                <td>{{val.created_at | date: 'dd.MM.yyyy'}}</td>
+                                <td class="text-center">
+                                    <a class="btn btn-xs btn-danger" ng-click="deleteContent(val.id)">Delete &nbsp;<span class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

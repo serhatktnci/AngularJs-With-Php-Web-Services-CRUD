@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-4">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-login"></i>Login
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div ng-show="errorMessage" class="note note-danger note-bordered">
+                    <h3>{{errorMessage}}</h3>
+                </div>
+                <form class="form-horizontal form-bordered">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Username</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="username" ng-model="loginParams.username" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" name="password" ng-model="loginParams.password" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" class="btn blue" ng-click="login(loginParams)"><i class="fa fa-check"></i> Login </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+</div>
